@@ -74,9 +74,9 @@ void loop() {
 
   // print unit
   if (data[POS_UNIT] == 0) {
-    Serial.print(" mm ");
+    Serial.print(" mm");
   } else {
-    Serial.print(" inch ");
+    Serial.print(" inch");
   }
 
 
