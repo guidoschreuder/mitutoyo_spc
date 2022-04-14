@@ -38,7 +38,7 @@ void loop() {
 
   digitalWrite(REQ_PIN, LOW);
 
-  for (int i = 0; i < NUM_BITS; i++) {
+  for (uint8_t i = 0; i < NUM_BITS; i++) {
     wait_for_falling_clk_edge();
 
     if (i % 4 == 0) {
@@ -59,8 +59,8 @@ void loop() {
   int pos_dec_point = data[POS_DEC_POINT];
   bool disp_digit = false;
   // print value
-  for (int i = 0; i < DIGIT_COUNT; i++) {
-    int digit = data[i + DIGIT_OFFSET];
+  for (uint8_t i = 0; i < DIGIT_COUNT; i++) {
+    uint8_t digit = data[i + DIGIT_OFFSET];
     disp_digit |= digit || (pos_dec_point + i >= 5);
     if(disp_digit) {
       Serial.print(digit);
@@ -74,9 +74,9 @@ void loop() {
 
   // print unit
   if (data[POS_UNIT] == 0) {
-    Serial.print(" mm ");
+    Serial.print(" mm");
   } else {
-    Serial.print(" inch ");
+    Serial.print(" inch");
   }
 
 
